@@ -118,12 +118,18 @@ $ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -no
 ```
 
 Base64-encode the cert.pem and key.pem files:
-(-w0 switch is not needed on Mac, only for Linux)
 
+Linux
 ```sh
 $ base64 -w0 key.pem > key.pem.base64
 $ base64 -w0 cert.pem > cert.pem.base64
 ```
+Mac
+```sh
+$ base64 -i key.pem > key.pem.base64
+$ base64 -i cert.pem > cert.pem.base64
+```
+
 
 The base64-encoded values (`key.pem.base64, cert.pem.base64` files) are then used for certificate and private_key.
 
